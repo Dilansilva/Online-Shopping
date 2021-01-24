@@ -10,11 +10,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const HeaderComponent = () => {
     return(
         <Nav
-        activeKey="/home"
-      >
+            activeKey="/home"
+            className="navColor"
+            expand="lg"
+        >
         <Nav.Item>
-          <Nav.Link href="/home"><h1 className="headerColor">Unicorn Shopping</h1></Nav.Link>
+          <Nav.Link href="/home">
+            <h1 className="headerColor">Unicorn Shopping</h1>
+          </Nav.Link>
         </Nav.Item>
+
+      
       </Nav>
     );
 }   

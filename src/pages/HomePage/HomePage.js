@@ -8,11 +8,15 @@ import '../../css/HomePage/HomePage.css'
 
 import HeaderComponent from '../HeaderComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginComponent from './LoginComponent';
 
 
 const HomePage = () => {
     return(
-        <HeaderComponent/>
+        <div>
+            <HeaderComponent/>
+            <LoginComponent/>
+        </div>
     );
 }
 
