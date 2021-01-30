@@ -1,27 +1,28 @@
 import {
    Nav,
-   h1
+   h1,
+   Navbar
 } from 'react-bootstrap';
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import '../css/HeaderComponent.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HeaderComponent = () => {
+  
     return(
-        <Nav
-            activeKey="/home"
-            className="navColor"
-            expand="lg"
-        >
-        <Nav.Item>
-          <Nav.Link href="/home">
-            <h1 className="headerColor">Unicorn Shopping</h1>
-          </Nav.Link>
-        </Nav.Item>
-
-      
-      </Nav>
+      <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="#home"><h1>Unicorn Shopping</h1></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ml-auto">
+          <Nav.Link href="#home">Sign-up</Nav.Link>
+          <Nav.Link href="#link">Sign-in</Nav.Link>
+         
+        </Nav>
+       
+      </Navbar.Collapse>
+    </Navbar>
     );
 }   
 
