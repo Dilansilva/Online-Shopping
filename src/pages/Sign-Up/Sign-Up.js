@@ -2,13 +2,15 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import HeaderComponent from '../HeaderComponent';
+import Lable from '../Sign-Up/Lable';//Import Lable Component in Sign-up
+import Input from '../Sign-Up/Input';//Import User Input
+
 import '../../css/Sign-Up/SignUp.css';
 
-import {Container,
-    Row,
-    Col,
+import {Col,
     Form,
-    Jumbotron
+    Jumbotron,
+    Button
     } from 'react-bootstrap';
 
 const SignUp = () => {
@@ -21,7 +23,7 @@ const SignUp = () => {
                         <Col className="alignItems">
                             <span className="dot"></span>
                                 <Form.Label style={{marginRight: "10px",marginLeft: "5px"}}>
-                                    Email :
+                                Select Trade Role :
                                 </Form.Label>
                                     <Form.Check
                                         type="radio"
@@ -39,61 +41,77 @@ const SignUp = () => {
                     </Form.Row><br/>
                         <Form.Row>
                             <Col className="alignItems">
-                                <span className="dot">
-                                </span>   
-                                    <Form.Label style={{marginRight: "10px",marginLeft: "5px"}}>
-                                        Select Trade Role :
-                                    </Form.Label>
-                                        <Form.Control 
+                                <Lable
+                                    Lable="Email : "
+                                />
+                                        <Input
                                             placeholder="Email Will Be Used As Login ID"
-                                            className="roundInput"
+                                            type="text"
                                         />
                         </Col>
                 </Form.Row><br/>
 
-
                     <Form.Row>
                         <Col className="alignItems">
-                            <span className="dot"></span>
-                                <Form.Label style={{marginRight: "10px",marginLeft: "5px"}}>
-                                    Password :
-                                </Form.Label>
-                                    <Form.Control 
+                            <Lable
+                                Lable="Password : "
+                            />
+                                    <Input
                                         placeholder="Please Set Login Password"
-                                        className="roundInput"
-                                        
+                                        type="password"
                                     />
                         </Col>
                     </Form.Row><br/>
 
-
                         <Form.Row>
                             <Col className="alignItems">
-                                <span className="dot"></span>
-                                    <Form.Label style={{marginRight: "10px",marginLeft: "5px"}}>
-                                        Company Name :
-                                    </Form.Label>
-                                        <Form.Control 
-                                            placeholder="Company Name Here"
-                                            className="roundInput"
-                                        />
+                                <Lable
+                                    Lable="Company Name : "
+                                />
+                                    <Input
+                                        placeholder="Company Name Here"
+                                        type="text"
+                                    />
                             </Col>
                         </Form.Row><br/>
 
                         <Form.Row>
                             <Col className="alignItems">
-                                <span className="dot"></span>
-                                    <Form.Label style={{marginRight: "10px",marginLeft: "5px"}}>
-                                        Full Name :
-                                    </Form.Label>
-                                        <Form.Control 
-                                            placeholder="First Name Here"
-                                            className="roundInput"
-                                        />
-                                        <Form.Control 
+                                <Lable
+                                    Lable="Full Name : "
+                                />
+                                    <Input
+                                        placeholder="First Name Here"
+                                        type="text"
+                                    />
+                                        <Input
                                             placeholder="Second Name Here"
-                                            className="roundInput"
+                                            type="text"
                                         />
+                            </Col>
+                           </Form.Row><br/>
+
+                        <Form.Row>
+                            <Col className="alignItems">
+                                <Lable
+                                    Lable="Tel  :  "
+                                />
+                                    <Input
+                                        placeholder="Phone Number"
+                                        type="text"
+                                    />
+                            </Col>
+                        </Form.Row><br/>
+
+                        <Form.Row>
+                            <Col className="alignItems">
+                                <Button 
+                                    variant="danger" 
+                                    type="submit"
+                                    className="roundInput"
+                                >
+                                    Register
+                                </Button>
                             </Col>
                         </Form.Row>
             </Form>

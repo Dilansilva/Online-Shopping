@@ -9,10 +9,9 @@ import {Form, Jumbotron} from 'react-bootstrap';
 const Lable = (props) => {
     return(
         <div>
-           <Jumbotron>
                 <span className="dot"></span>
                     <Form.Label>{props.Lable}</Form.Label>
-           </Jumbotron>
+           
         </div>
     );
 }
