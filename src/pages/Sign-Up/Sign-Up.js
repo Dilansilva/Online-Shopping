@@ -5,6 +5,9 @@ import HeaderComponent from '../HeaderComponent';
 import Lable from '../Sign-Up/Lable';//Import Lable Component in Sign-up
 import Input from '../Sign-Up/Input';//Import User Input
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+
 import '../../css/Sign-Up/SignUp.css';
 
 import {Col,
@@ -18,10 +21,21 @@ const SignUp = () => {
     const [Trademode,setTrademode] = useState();
     const [TrademodeCode,setTrademodeCode] = useState(null);
 
+    const [Toggle,setToggle] = useState('password');
+
+    function ToggleButton(event){
+        event.preventDefault();
+        if(Toggle == 'password'){
+            setToggle('text');
+        }else{
+            setToggle('password');
+        }
+    }
+
     useEffect(() => {
         if(Trademode == 'seller'){
             setTrademodeCode(
-                <div>
+                            <div>
                                 <Form.Row>
                                     <Col className="alignItems">
                                         <Lable
@@ -45,9 +59,13 @@ const SignUp = () => {
     return(
         <div>
             <HeaderComponent/>
-                <div >
-                <Jumbotron> 
-                <Form style={{justifyContent: 'center',alignItems: 'center'}}>
+                <div style={{display: 'flex',  
+                            justifyContent:'center', 
+                            alignItems:'center', 
+                            height: '100vh',
+                            backgroundColor: '#f8f1f1'}}>
+               
+                <Form>
                         <Form.Row>
                             <Col className="alignItems">
                                 <span className="dot"></span>
@@ -86,11 +104,15 @@ const SignUp = () => {
                             <Col className="alignItems">
                                 <Lable
                                     Lable="Password : "
-                                />
+                                />  
                                         <Input
                                             placeholder="Please Set Login Password"
-                                            type="password"
+                                            type={Toggle}
                                         />
+                                            <button 
+                                                class="button button5"
+                                                onClick={ToggleButton}
+                                            ><i><FontAwesomeIcon icon={faEye} /></i></button>
                             </Col>
                         </Form.Row><br/>
     
@@ -139,7 +161,7 @@ const SignUp = () => {
                                 </Col>
                             </Form.Row>
                 </Form>
-            </Jumbotron>
+           
                 </div>
         </div>
     );
