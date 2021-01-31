@@ -12,7 +12,6 @@ import '../../css/Sign-Up/SignUp.css';
 
 import {Col,
     Form,
-    Jumbotron,
     Button
     } from 'react-bootstrap';
 
