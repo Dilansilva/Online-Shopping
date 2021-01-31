@@ -1,7 +1,3 @@
-import {Container,
-        Row,
-        Col
-        } from 'react-bootstrap';
 import React from 'react';
 
 import '../../css/HomePage/HomePage.css'

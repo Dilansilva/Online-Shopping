@@ -3,7 +3,7 @@ import {
    h1,
    Navbar
 } from 'react-bootstrap';
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import '../css/HeaderComponent.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
