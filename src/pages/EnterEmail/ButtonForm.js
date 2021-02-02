@@ -1,10 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button} from 'react-bootstrap';//Nav item
 
-const ButtonForm = () => {
+import '../../css/Sign-Up/SignUp.css';//Import CSS
+
+const ButtonForm = (props) => {
     return(
-        <div>
-        </div>
+            <Button 
+                variant="danger"
+                onClick={props.onClick}
+                className="roundInput"
+                style={{backgroundColor:"#FF7616"}}
+            >
+                {props.name}
+            </Button>
     );
 };
 
