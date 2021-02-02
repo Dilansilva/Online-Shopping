@@ -1,7 +1,8 @@
 import React from 'react';
 import {Navbar,
         Col,
-        Form} from 'react-bootstrap';//Nav item
+        Form,
+        Button} from 'react-bootstrap';//Nav item
 
 import Lable from '../Sign-Up/Lable';//Import Lable Component
 import Input from '../Sign-Up/Input';//Import Input Component 
@@ -15,7 +16,7 @@ const EmailVerification = () => {
             <Navbar expand="lg" variant="light" bg="light" expand="lg">
                 <Navbar.Brand><h2>Unicorn Shopping</h2></Navbar.Brand>
             </Navbar>
-                <div className="spaceBetweenNavBar">
+                <div>
                     <h3>Please Check Your Email And Enter Your OTP Code Here</h3>
                         <Form>
                             <Form.Row>
@@ -28,7 +29,19 @@ const EmailVerification = () => {
                                             type="text"
                                         />
                                 </Col>
-                            </Form.Row>
+                            </Form.Row><br/>
+                                <Form.Row>
+                                    <Col>   
+                                        <Button
+                                            variant="danger"
+                                            type="submit"
+                                            style={{backgroundColor:"#FF7616"}}
+                                            className="roundInput" 
+                                        >
+                                        Submit
+                                        </Button>
+                                    </Col>
+                                </Form.Row>
                         </Form>
                 </div>
         </div>
