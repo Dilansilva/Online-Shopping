@@ -21,7 +21,7 @@ const EmailVerification = () => {
                             <Form.Row>
                                 <Col className="alignItems">
                                     <Lable 
-                                        Lable="OTP Code : "
+                                        Lable="OTP Code :  "
                                     />
                                         <Input
                                             placeholder="Email Will Be Used As Login ID"
