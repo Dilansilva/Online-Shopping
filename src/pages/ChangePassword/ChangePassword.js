@@ -8,7 +8,12 @@ import LableForm from '../EnterEmail/LableForm';
 const ChangePassword = () => {
     return(
         <div>
-            <Navbar expand="lg" variant="light" bg="light" expand="lg">
+            <Navbar 
+                expand="lg" //Props from Bootstrap 
+                variant="light" 
+                bg="light" 
+                expand="lg"
+            >
                 <Navbar.Brand><h2>Unicorn Shopping</h2></Navbar.Brand>
             </Navbar>
                 <div>
@@ -16,7 +21,7 @@ const ChangePassword = () => {
                         <div style={{textAlign: 'center',marginTop: '50px'}}>
                             <LableForm
                                 name="New Password :"
-                                type="text"
+                                type="password"
                                 onClick={() => {console.log("Hello World")}}
                                 placeholder="Enter The New Passwor Here"
                             />
