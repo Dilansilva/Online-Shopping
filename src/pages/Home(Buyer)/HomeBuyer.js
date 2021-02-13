@@ -17,6 +17,7 @@ const HomeBuyer = () => {
                             <Nav className="ml-auto">
                                 <Nav.Link href="#home">Log-Out</Nav.Link>
                                 {/*This area for implement Cart */}
+                                {/*Just for demo */}
                             </Nav>
                    
                         </Navbar.Collapse>
