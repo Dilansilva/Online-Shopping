@@ -12,12 +12,12 @@ const HeaderComponent = () => {
   
     return(
       <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home"><h1>Unicorn Shopping</h1></Navbar.Brand>
+      <Navbar.Brand href="/"><h1>Unicorn Shopping</h1></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link href="#home">Sign-up</Nav.Link>
-          <Nav.Link href="#link">Sign-in</Nav.Link>
+          <Nav.Link href="/signup">Sign-up</Nav.Link>
+          <Nav.Link href="/">Sign-in</Nav.Link>
          
         </Nav>
        
