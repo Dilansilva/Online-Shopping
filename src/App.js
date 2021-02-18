@@ -18,6 +18,13 @@ const App = () => {
             <Route path="/signup">
               <SignUp/>
             </Route>
+              <Route path="/emailverify">
+                <EmailVerification/>
+              </Route>
+                <Route path="/emailenter">
+                  <EnterEmail/>
+                </Route>
+                 
         </Switch>
       </div>
     </Router>

@@ -17,19 +17,22 @@ const EmailVerification = () => {
                 <Navbar.Brand><h2>Unicorn Shopping</h2></Navbar.Brand>
             </Navbar>
                 <div>
-                    <h3>Please Check Your Email And Enter Your OTP Code Here</h3>
-                        <Form>
+                    <h3 style={{textAlign: 'center',marginTop: '40px'}}>Please Check Your Email And Enter Your OTP Code Here</h3>
+                        <Form style={{textAlign: 'center',marginTop: '40px'}}>
+                            <div tyle={{textAlign: 'center',marginTop: '40px'}}>
                             <Form.Row>
-                                <Col className="alignItems">
-                                    <Lable 
-                                        Lable="OTP Code :  "
+                            <Col className="alignItems">
+                                <Lable 
+                                    Lable="OTP Code :  "
+                                />
+                                    <Input
+                                        placeholder="Email Will Be Used As Login ID"
+                                        type="text"
                                     />
-                                        <Input
-                                            placeholder="Email Will Be Used As Login ID"
-                                            type="text"
-                                        />
-                                </Col>
-                            </Form.Row><br/>
+                            </Col>
+                        </Form.Row>
+                            </div>
+                            <br/>
                                 <Form.Row>
                                     <Col>   
                                         <Button
