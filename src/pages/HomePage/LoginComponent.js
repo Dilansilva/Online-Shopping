@@ -11,8 +11,6 @@ import {Jumbotron,
 import '../../css/HomePage/LoginComponent.css';
 import image from './homepage.png';
 
-import axios from 'axios';
-
 const LoginComponent = () => {
 
     const [ email, setEmail ] = useState();//State for email
@@ -41,6 +39,8 @@ const LoginComponent = () => {
                     setemailError('Invalid Email..try again!');//set email error message
                 } if(data == "invalidpassword"){//password error statement
                     stepasswordError('Invalid Password..try again!');//set password error message
+                } if(data == "valid"){
+                    //navigate to home page code here
                 }
             })
     

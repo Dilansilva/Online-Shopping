@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import HeaderComponent from '../HeaderComponent';//Import Header Component
@@ -8,6 +8,10 @@ import ButtonForm from './ButtonForm';//Import Button component
 import '../../css/Sign-Up/SignUp.css';//Import CSS
 
 const EnterEmail = () => {
+    const [email, setEmail] = useState('');//state for email
+    const onClickSubmit = () => {
+        //fetch code here
+    }
     return(
         <div>
             <HeaderComponent/>
@@ -18,7 +22,7 @@ const EnterEmail = () => {
                         <LableForm
                             name="Email : "
                             type="text"
-                            onClick={() => {console.log("Clicked")}}
+                            onChange={(e) => {setEmail(e.target.value)}}
                             placeholder="Enter Email Here"
                         />
                             <div style={{marginTop: '30px'}}>
