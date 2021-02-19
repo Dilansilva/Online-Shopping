@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import {Jumbotron,
         Col,
         Row,
@@ -11,23 +11,40 @@ import {Jumbotron,
 import '../../css/HomePage/LoginComponent.css';
 import image from './homepage.png';
 
+import axios from 'axios';
+
 const LoginComponent = () => {
 
-    const [ email, setEmail ] = useState("");//State for email
+    const [ email, setEmail ] = useState();//State for email
     const [ password, setPasword ] = useState();//State for password
+
+    const [emailerror, setemailError] = useState('');//Error state for Invalid Email
+    const [passworderror, stepasswordError] = useState('');//Error state for Invalid Password
 
     const onClickSubmit = (e) => {//function for submit data to backend
         e.preventDefault();//block the getting refresh when button clicked
-        console.log(email);
+        const dataCr = {email : email,password : password}//login credentials
+        console.log(dataCr);
         fetch('http://localhost:4000/login',{//call the API
             method: 'POST',
+            mode : 'cors', 
             headers: {
-                'Content-Type': 'application/json',
+                 Accept : 'application/json',
+                 'Content-Type' : 'application/json',
+            
               },    
-            body: JSON.stringify(email),
+            body: JSON.stringify(dataCr),
     })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then((data) => {
+                if(data == "invalidemail"){//email error statement
+                    setemailError('Invalid Email..try again!');//set email error message
+                } if(data == "invalidpassword"){//password error statement
+                    stepasswordError('Invalid Password..try again!');//set password error message
+                }
+            })
+    
+ 
     }
 
     return (
@@ -61,6 +78,9 @@ const LoginComponent = () => {
                                             placeholder="Enter Email"
                                             onChange={(e) => {setEmail(e.target.value)}}     
                                         />
+                                        <p style={{color : 'red'}}>
+                                            <small>{emailerror}</small>
+                                        </p>
                                     </Form.Group>
                               
                                     <Form.Group controlId="formBasicPassword">
@@ -68,8 +88,11 @@ const LoginComponent = () => {
                                         <Form.Control 
                                             type="password" 
                                             placeholder="Enter Password"
-                                            value={(e) => {setPasword(e)}} 
+                                            onChange={(e) => {setPasword(e.target.value)}} 
                                         />
+                                        <p style={{color : 'red'}}>
+                                            <small>{passworderror}</small>
+                                        </p>
                                     </Form.Group>
 
                                 <div class="textAlign">
