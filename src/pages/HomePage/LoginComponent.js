@@ -21,17 +21,18 @@ const LoginComponent = () => {
 
     const onClickSubmit = (e) => {//function for submit data to backend
         e.preventDefault();//block the getting refresh when button clicked
-        const dataCr = {email : email,password : password}//login credentials
-        console.log(dataCr);
         fetch('http://localhost:4000/login',{//call the API
-            method: 'POST',
-            mode : 'cors', 
+             method: 'POST',
+             mode : 'cors', 
             headers: {
-                 Accept : 'application/json',
-                 'Content-Type' : 'application/json',
-            
+                Accept : 'application/json',
+                'Content-Type' : 'application/json',
+                'Access-Control-Allow-Origin' : 'http://localhost:4000/login'
               },    
-            body: JSON.stringify(dataCr),
+            body: JSON.stringify({
+                email,
+                password
+            }),
     })
             .then(response => response.json())
             .then((data) => {
@@ -43,7 +44,10 @@ const LoginComponent = () => {
                     //navigate to home page code here
                 }
             })
-    
+        .catch((error) => {
+            //setemailError('Network Errornn');    
+            console.log(error);
+        });
  
     }
 

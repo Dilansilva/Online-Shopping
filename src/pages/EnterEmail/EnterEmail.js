@@ -7,10 +7,37 @@ import ButtonForm from './ButtonForm';//Import Button component
 
 import '../../css/Sign-Up/SignUp.css';//Import CSS
 
-const EnterEmail = () => {
+const EnterEmail = () => {//function for on click event
     const [email, setEmail] = useState('');//state for email
-    const onClickSubmit = () => {
-        //fetch code here
+    const [emailError, setEmailError] = useState('');//State for Email Error
+    const [networkError, setNetworkerror] = useState('');//State for Network Error
+     
+    const onClickSubmit = (e) => {
+        e.preventDefault();//block the getting refresh when button clicked
+        fetch('http://localhost:4000/enterEmail',{//call the API
+             method: 'POST',
+             mode : 'cors', 
+            headers: {
+                Accept : 'application/json',
+                'Content-Type' : 'application/json',
+                'Access-Control-Allow-Origin' : 'http://localhost:4000/enterEmail'
+              },    
+            body: JSON.stringify({
+               email//send email to backend
+            }),
+        })
+            .then(response => response.json())
+            .then((data) => {
+                if(data == "invalidemail"){//email error statement
+                    setEmailError('Invalid Email..try again!');//set email error message
+                }  if(data == "valid"){
+                    //navigate to home page code here
+                }
+            })
+        .catch((error) => {
+            setNetworkerror('Network Error');//email error statement   
+            console.log(error);//have to remove
+        });
     }
     return(
         <div>
@@ -25,10 +52,18 @@ const EnterEmail = () => {
                             onChange={(e) => {setEmail(e.target.value)}}
                             placeholder="Enter Email Here"
                         />
+                            <p style={{color : 'red'}}>{/*Error message for invalid Emai*/}
+                                <small>{emailError}</small>
+                            </p>
+
+                                <p style={{color : 'red'}}>{/*Error message for Network error */}
+                                    <small>{networkError}</small>
+                                </p>
+
                             <div style={{marginTop: '30px'}}>
                                 <ButtonForm
                                     name="Submit"
-                                    onClick={() => {console.log("Hello World")}}    
+                                    onClick={onClickSubmit}    
                                 />
                             </div>
                     </div>
