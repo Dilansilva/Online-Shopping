@@ -10,8 +10,11 @@ import {Jumbotron,
 
 import '../../css/HomePage/LoginComponent.css';
 import image from './homepage.png';
+import {useHistory} from 'react-router-dom';
 
 const LoginComponent = () => {
+
+    const history = useHistory();
 
     const [ email, setEmail ] = useState();//State for email
     const [ password, setPasword ] = useState();//State for password
@@ -20,6 +23,7 @@ const LoginComponent = () => {
     const [passworderror, stepasswordError] = useState('');//Error state for Invalid Password
 
     const onClickSubmit = (e) => {//function for submit data to backend
+        
         e.preventDefault();//block the getting refresh when button clicked
         fetch('http://localhost:4000/login',{//call the API
              method: 'POST',
@@ -42,6 +46,7 @@ const LoginComponent = () => {
                     stepasswordError('Invalid Password..try again!');//set password error message
                 } if(data == "valid"){
                     //navigate to home page code here
+                    history.push('/emailenter');//Enter to next page when Password and username valid
                 }
             })
         .catch((error) => {

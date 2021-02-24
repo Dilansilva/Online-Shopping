@@ -17,12 +17,12 @@ import {Col,
 
 const SignUp = () => {
 
-    const [Trademode,setTrademode] = useState();
+    const [Trademode,setTrademode] = useState('');
     const [TrademodeCode,setTrademodeCode] = useState(null);
 
     const [Toggle,setToggle] = useState('password');
 
-    function ToggleButton(event){
+    function ToggleButton(event){//function for toggle button
         event.preventDefault();
         if(Toggle == 'password'){
             setToggle('text');
@@ -31,7 +31,7 @@ const SignUp = () => {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => {//fuction for trade mode selection
         if(Trademode == 'seller'){
             setTrademodeCode(
                             <div>

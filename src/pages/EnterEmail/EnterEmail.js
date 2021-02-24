@@ -15,7 +15,7 @@ const EnterEmail = () => {//function for on click event
     const onClickSubmit = (e) => {
         e.preventDefault();//block the getting refresh when button clicked
         fetch('http://localhost:4000/enterEmail',{//call the API
-             method: 'POST',
+             method: 'GET',
              mode : 'cors', 
             headers: {
                 Accept : 'application/json',
