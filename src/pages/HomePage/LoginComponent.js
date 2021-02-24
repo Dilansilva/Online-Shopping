@@ -40,18 +40,20 @@ const LoginComponent = () => {
     })
             .then(response => response.json())
             .then((data) => {
+                const res = JSON.stringify(data)//convert data into json
+               
                 if(data == "invalidemail"){//email error statement
                     setemailError('Invalid Email..try again!');//set email error message
                 } if(data == "invalidpassword"){//password error statement
                     stepasswordError('Invalid Password..try again!');//set password error message
-                } if(data == "valid"){
+                }if(res == '{"Valid":"Loggedin"}'){
                     //navigate to home page code here
                     history.push('/emailenter');//Enter to next page when Password and username valid
                 }
             })
         .catch((error) => {
-            //setemailError('Network Errornn');    
-            console.log(error);
+            setemailError('Network Error');    
+            console.log('Error is : ',error);
         });
  
     }
