@@ -67,10 +67,14 @@ const SignUp = () => {
                         }
                     }else{  
                         setButonstate('true');
+                        
                     }
+                } else{
+                    setpassError('Password is too short!');
                 }
             } else{
                 setButonstate('true');
+                setMailerror('Invalid Email!');
             }
         } else if(Trademode === 'seller'){
             if(emailReg.test(email) === true){
