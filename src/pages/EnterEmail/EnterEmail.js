@@ -28,9 +28,9 @@ const EnterEmail = () => {//function for on click event
         })
             .then(response => response.json())
             .then((data) => {
-                if(data == "invalidemail"){//email error statement
+                if(data === "invalidemail"){//email error statement
                     setEmailError('Invalid Email..try again!');//set email error message
-                }  if(data == "valid"){
+                }  if(data === "valid"){
                     //navigate to home page code here
                 }
             })

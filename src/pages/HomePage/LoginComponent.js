@@ -42,11 +42,11 @@ const LoginComponent = () => {
             .then((data) => {
                 const res = JSON.stringify(data)//convert data into json
                
-                if(data == "invalidemail"){//email error statement
+                if(data === "invalidemail"){//email error statement
                     setemailError('Invalid Email..try again!');//set email error message
-                } if(data == "invalidpassword"){//password error statement
+                } if(data === "invalidpassword"){//password error statement
                     stepasswordError('Invalid Password..try again!');//set password error message
-                }if(res == '{"Valid":"Loggedin"}'){
+                }if(res === '{"Valid":"Loggedin"}'){
                     //navigate to home page code here
                     history.push('/emailenter');//Enter to next page when Password and username valid
                 }
@@ -106,7 +106,7 @@ const LoginComponent = () => {
                                         </p>
                                     </Form.Group>
 
-                                <div class="textAlign">
+                                <div className="textAlign">
                                     <Button 
                                         variant="danger" 
                                         type="submit"

@@ -13,6 +13,7 @@ const Input = (props) => {//For Input Component
                 placeholder={props.placeholder} //prop for placholder
                 type={props.type} //prop for type
                 className="roundInput"
+                onChange={props.onChange}
             />
         </div>
     );

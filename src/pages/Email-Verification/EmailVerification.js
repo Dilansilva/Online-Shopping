@@ -13,7 +13,7 @@ import '../../css/EmailVerification/EmailVerification.css';
 const EmailVerification = () => {
     return(
         <div>
-            <Navbar expand="lg" variant="light" bg="light" expand="lg">
+            <Navbar expand="lg" variant="light" bg="light">
                 <Navbar.Brand><h2>Unicorn Shopping</h2></Navbar.Brand>
             </Navbar>
                 <div>
