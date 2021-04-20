@@ -18,7 +18,7 @@ import {Col,
 
 const SignUp = () => {
 
-    const [Trademode,setTrademode] = useState('');
+    const [Trademode,setTrademode] = useState('buyer');
     const [TrademodeCode,setTrademodeCode] = useState(null);
     const [email,setEmail ] = useState();//state for email
     const [password,setPassword] = useState('');//state for password
@@ -49,7 +49,7 @@ const SignUp = () => {
 
     const validation = () => {//function for validation
         //e.preventDefault();//denied the refreshing
-        console.log('Trade mode',Trademode);
+        console.log('Trade Mode',Trademode);
 
         const emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;//regex for email
         const passwordReg = /^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$/;//regex for password
@@ -76,13 +76,18 @@ const SignUp = () => {
                 setButonstate('true');
                 setMailerror('Invalid Email!');
             }
-        } else if(Trademode === 'seller'){
+        } else /*if(Trademode === 'seller')*/{
             if(emailReg.test(email) === true){
+                console.log('EMail okay');
                 if(passwordReg.test(password) === true){
+                    console.log('password okay');
                     if(fname && sname){
+                        console.log('names okay');
                         if(telephoneReg.test(pnumber) === true){
+                            console.log('number');
                             if(company){
                                 setButonstate('');
+                                console.log('company okay');
                             }else{
                                 setButonstate('true');
                             }
@@ -90,7 +95,7 @@ const SignUp = () => {
                         else {
                             setButonstate('true');
                         }
-                    }else{  
+                    }else{ 
                         setButonstate('true');
                     }
                 }
@@ -101,32 +106,40 @@ const SignUp = () => {
     }
 
     useEffect(() => {//fuction for trade mode selection
-        tradeModeFun();
+       
         validation();
     })
 
     const tradeModeFun = () => {
-        if(Trademode === 'seller'){
+        console.log('function executed!');
+        // setTrademode('seller');//select the seller mode 
+        console.log(Trademode);
+        
+           if(Trademode === 'seller'){
+               setTrademode('buyer');
             setTrademodeCode(
-                            <div>
-                                <Form.Row>
-                                    <Col className="alignItems">
-                                        <Lable
-                                            Lable="Company Name : "
-                                        />
-                                        <Input
-                                             placeholder="Company Name Here"
-                                             type="text"
-                                             onChange={(e) => {setCompany(e.value.target)}}
-                                        />
-                                    </Col>
-                                </Form.Row>
-                                <br/>
-                            </div>
-            );
-        } else if(Trademode === 'buyer'){
-            setTrademodeCode(null);
-        }
+                <div>
+                    <Form.Row>
+                        <Col className="alignItems">
+                            <Lable
+                                Lable="Company Name : "
+                            />
+                            <Input
+                                 placeholder="Company Name Here"
+                                 type="text"
+                                 onChange={(e) => {setCompany(e.value.target)}}
+                            />
+                        </Col>
+                    </Form.Row>
+                    <br/>
+                </div>
+                        );
+                        
+           }else{
+                setTrademodeCode(null);
+                setTrademode('seller');
+           }
+        
     }
   
     return(
@@ -150,14 +163,15 @@ const SignUp = () => {
                                             label="Buyer"
                                             value="buyer"
                                             name="trademode"
-                                            onChange={(e) => { setTrademode(e.target.value) }} 
+                                            onClick={tradeModeFun} 
+                                            
                                         />
                                             <Form.Check
                                                 type="radio"
                                                 label="Seller"
                                                 value="seller"
                                                 name="trademode"
-                                                onChange={(e) => { setTrademode(e.target.value) }}
+                                                onClick={tradeModeFun}
                                             />
                             </Col>
                         </Form.Row><br/>
