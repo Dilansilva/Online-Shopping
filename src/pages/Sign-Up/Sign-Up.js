@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 
 
-import HeaderComponent from '../HeaderComponent';
+import HeaderComponent from '../HeaderComponent';//navigation component
 import Lable from '../Sign-Up/Lable';//Import Lable Component in Sign-up
 import Input from '../Sign-Up/Input';//Import User Input
 
@@ -43,8 +43,7 @@ const SignUp = () => {
     }
 
     const handleState = () => {
-        //setEmail(e.target.value);
-        console.log('CLicked');
+        
     }
 
     const validation = () => {//function for validation
@@ -112,7 +111,7 @@ const SignUp = () => {
 
     useEffect(() => {
         tradeModeFun();
-    })
+    },[Trademode])
 
     const tradeModeFun = () => {
         console.log('function executed!');
@@ -131,8 +130,9 @@ const SignUp = () => {
                             <Input
                                  placeholder="Company Name Here"
                                  type="text"
-                                 onChange={(e) => {setCompany(e.value.target)}}
-                            />
+                                 onChange={handleState}
+
+                            /> 
                         </Col>
                     </Form.Row>
                     <br/>
@@ -167,7 +167,7 @@ const SignUp = () => {
                                             label="Buyer"
                                             value="buyer"
                                             name="trademode"
-                                            onClick={tradeModeFun} 
+                                            onClick={(e) => {setTrademode(e.target.value)}} 
                                             
                                         />
                                             <Form.Check
@@ -175,7 +175,7 @@ const SignUp = () => {
                                                 label="Seller"
                                                 value="seller"
                                                 name="trademode"
-                                                onClick={tradeModeFun}
+                                                onClick={(e) => {setTrademode(e.target.value)}}
                                             />
                             </Col>
                         </Form.Row><br/>
@@ -211,6 +211,7 @@ const SignUp = () => {
     
                            <div>
                                 {TrademodeCode}
+                             
                            </div>
     
                             <Form.Row>
