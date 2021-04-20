@@ -110,13 +110,17 @@ const SignUp = () => {
         validation();
     })
 
+    useEffect(() => {
+        tradeModeFun();
+    })
+
     const tradeModeFun = () => {
         console.log('function executed!');
         // setTrademode('seller');//select the seller mode 
         console.log(Trademode);
         
            if(Trademode === 'seller'){
-               setTrademode('buyer');
+            //    setTrademode('buyer');
             setTrademodeCode(
                 <div>
                     <Form.Row>
@@ -137,7 +141,7 @@ const SignUp = () => {
                         
            }else{
                 setTrademodeCode(null);
-                setTrademode('seller');
+                // setTrademode('seller');
            }
         
     }
