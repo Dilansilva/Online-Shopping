@@ -8,6 +8,8 @@ import '../css/HeaderComponent.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';//icon for shoppig cart
+
 const HeaderComponent = () => {
   
     return(
@@ -18,7 +20,10 @@ const HeaderComponent = () => {
         <Nav className="ml-auto">
           <Nav.Link href="/signup">Sign-up</Nav.Link>
           <Nav.Link href="/">Sign-in</Nav.Link>
-         
+            <Nav.Link href="/cart">
+              <ShoppingCartIcon/>
+              <span>0</span>
+            </Nav.Link>
         </Nav>
        
       </Navbar.Collapse>
