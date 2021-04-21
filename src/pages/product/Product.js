@@ -45,14 +45,16 @@ const Product = (props) => {
     return (  
         <div>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={props.image} />
                     <Card.Body>
                 <Card.Title>${props.price}</Card.Title> 
                     <Card.Text>
                        <small>{props.details}</small> 
                     </Card.Text>
                     <Card.Text>
-                        {star}{/* //ratings state */}
+                        <div style={{display:'flex'}}>
+                            {star}<b>({props.count})</b>
+                        </div>
                     </Card.Text>
                         <Button
                             variant="contained"

@@ -4,58 +4,102 @@ import HeaderComponent from '../HeaderComponent';//navbar
 import Product from '../product/Product';//product
 
 import image from '../../images/shopping-online-on-mobile-application-600w-1697895496.webp';
+import picOne from '../../images/41vMYgD92xL.jpg'
 
-import {Carousel} from 'react-bootstrap';
 
 const Menu = () => {
     return (
         <div>
             <HeaderComponent/>
-            {/* <Carousel>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={image}
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={image}
-      alt="Second slide"
-    />
 
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={image}
-      alt="Third slide"
-    />
+      <img src={image} className="img-fluid" alt="Responsive image" style={{width: '100%',height:'700px'}}></img>
+      <br/>
+      <br/>
+          <div className="container-fluid">
+            <div class="row">
+              <div className="col-sm-3">
+                <Product
+                  image={picOne}
+                  price="199.45"
+                  count={21}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                  ratings={5}
+                />
+              </div>
+              <div className="col-sm-3">
+                <Product
+                  image={picOne}
+                  price="199.45"
+                  count={21}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                  ratings={5}
+                />
+              </div>
+              <div className="col-sm-3">
+                <Product
+                  image={picOne}
+                  price="199.45"
+                  count={21}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                  ratings={5}
+                />
+              </div>
+              <div className="col-sm-3">
+                <Product
+                  image={picOne}
+                  price="199.45"
+                  count={21}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                  ratings={5}
+                />
+              </div>
+            </div>
+          </div>
 
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel> */}
-      <img src={image} class="img-fluid" alt="Responsive image" style={{width: '100%',height:'700px'}}></img>
-      <Product
-        price="199.45"
-        details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-        ratings={5}
-      />
+          <br/>
+          <div className="container-fluid">
+            <div class="row">
+              <div className="col-sm-3">
+                <Product
+                  image={picOne}
+                  price="199.45"
+                  count={21}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                  ratings={5}
+                />
+              </div>
+              <div className="col-sm-3">
+                <Product
+                  image={picOne}
+                  price="199.45"
+                  count={21}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                  ratings={5}
+                />
+              </div>
+              <div className="col-sm-3">
+                <Product
+                  image={picOne}
+                  price="199.45"
+                  count={21}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                  ratings={5}
+                />
+              </div>
+              <div className="col-sm-3">
+                <Product
+                  image={picOne}
+                  price="199.45"
+                  count={21}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                  ratings={5}
+                />
+              </div>
+            </div>
+          </div>
         </div>
     )
 }
 
 export default Menu;
+
