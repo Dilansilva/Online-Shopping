@@ -21,8 +21,15 @@ const HeaderComponent = () => {
           <Nav.Link href="/signup">Sign-up</Nav.Link>
           <Nav.Link href="/">Sign-in</Nav.Link>
             <Nav.Link href="/cart">
-              <ShoppingCartIcon/>
-              <span>0</span>
+                <b>
+                  <ShoppingCartIcon/>
+                </b>
+              <span 
+                style={{//space between cart and item count
+                  marginLeft:'10px',
+                  marginRight:'10px'
+                }}
+              >0</span>
             </Nav.Link>
         </Nav>
        
