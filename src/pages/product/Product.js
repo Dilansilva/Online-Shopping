@@ -47,9 +47,9 @@ const Product = (props) => {
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
-                <Card.Title>${props.price}</Card.Title>
+                <Card.Title>${props.price}</Card.Title> 
                     <Card.Text>
-                       <small>{props.details}</small>
+                       <small>{props.details}</small> 
                     </Card.Text>
                     <Card.Text>
                         {star}{/* //ratings state */}

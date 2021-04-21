@@ -3,7 +3,7 @@ import React from 'react';
 import HeaderComponent from '../HeaderComponent';//navbar
 import Product from '../product/Product';//product
 
-import image from '../../images/product-package-boxes-shopping-bag-cart-with-laptop-online-shopping-delivery-concept_38716-138.webp';
+import image from '../../images/shopping-online-on-mobile-application-600w-1697895496.webp';
 
 import {Carousel} from 'react-bootstrap';
 
@@ -11,7 +11,7 @@ const Menu = () => {
     return (
         <div>
             <HeaderComponent/>
-            <Carousel>
+            {/* <Carousel>
   <Carousel.Item>
     <img
       className="d-block w-100"
@@ -47,8 +47,8 @@ const Menu = () => {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
-</Carousel>
-      <h1>nknkk</h1>
+</Carousel> */}
+      <img src={image} class="img-fluid" alt="Responsive image" style={{width: '100%',height:'700px'}}></img>
       <Product
         price="199.45"
         details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
