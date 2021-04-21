@@ -49,7 +49,13 @@ const Menu = () => {
   </Carousel.Item>
 </Carousel>
       <h1>nknkk</h1>
-      <Product/>
+      <Product
+        price="199.45"
+        details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+        ratings={5}
+      />
+
+
         </div>
     )
 }
