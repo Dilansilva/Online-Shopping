@@ -52,7 +52,7 @@ const Product = (props) => {
                        <small>{props.details}</small> 
                     </Card.Text>
                     <Card.Text>
-                        <div style={{display:'flex'}}>
+                        <div style={{display:'flex'}}> {/*add a horizontal view between stars and count*/}
                             {star}<b>({props.count})</b>
                         </div>
                     </Card.Text>
