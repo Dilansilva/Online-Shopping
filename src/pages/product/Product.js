@@ -3,14 +3,8 @@ import React,{useState,useEffect} from 'react';
 import {Card} from 'react-bootstrap';
 import GradeIcon from '@material-ui/icons/Grade';//star icon
 import Button from '@material-ui/core/Button';//button
-import { makeStyles } from '@material-ui/core/styles';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
-const useStyles = makeStyles((theme) => ({
-    button: {
-      margin: theme.spacing(1),
-    },
-  }));
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 const Product = (props) => {
 
@@ -22,8 +16,6 @@ const Product = (props) => {
         useEffect(() => {
             ratings();
         },[props.ratings])
-
-        const classes = useStyles();
 
     const ratings = () => {//function for ratings
         if(props.ratings === 1){//when the rarings are 1
@@ -57,7 +49,7 @@ const Product = (props) => {
                     <Card.Body>
                 <Card.Title>${props.price}</Card.Title>
                     <Card.Text>
-                       {props.details}
+                       <small>{props.details}</small>
                     </Card.Text>
                     <Card.Text>
                         {star}{/* //ratings state */}
@@ -65,7 +57,6 @@ const Product = (props) => {
                         <Button
                             variant="contained"
                             color="primary"
-                            className={classes.button}
                             startIcon={ <AddShoppingCartIcon />}
                         >Add To Cart</Button>
                     </Card.Body>
