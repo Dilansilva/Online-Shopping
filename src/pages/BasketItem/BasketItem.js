@@ -13,14 +13,15 @@ const BasketItem = (props) => {
       <GradeIcon />
     </div>
   );
+  const [price, setPrice] = useState(); //state for price
 
   useEffect(() => {
     ratings();
-  }, [props.ratings]);
+  }, [props.ratings, props.price, props.unitcount]);
 
   const ratings = () => {
     //function for ratings
-    console.log(props.ratings);
+    setPrice(props.price * props.unitcount);
 
     if (props.ratings === 1) {
       //when the rarings are 1
@@ -75,18 +76,18 @@ const BasketItem = (props) => {
       <br />
       <Container
         className="block-example border border-primary"
-        style={{ margin: "10px" }}
+        style={{ alignItems: "center", borderRadius: "20px" }}
       >
         <Row>
           <Col xs={3} md={2}>
             <Image src={image} fluid />
           </Col>
-          <Col xs={6} md={6}>
+          <Col xs={6} md={4}>
             <p>
               <b>{props.details}</b>
             </p>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <b>${props.price}</b>
+              <b>Unit Price : ${props.price}</b>
               <div>{star}</div>
             </div>
           </Col>
@@ -99,6 +100,16 @@ const BasketItem = (props) => {
             >
               Delete from Cart
             </Button>
+            <br />
+            <br />
+            <b>Number of Units:{props.unitcount}</b>
+          </Col>
+          <Col
+            xs={6}
+            md={2}
+            style={{ marginTop: "30px", marginBottom: "30px" }}
+          >
+            <b>Amount : ${price}</b>
           </Col>
         </Row>
       </Container>
