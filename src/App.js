@@ -7,6 +7,7 @@ import Menu from "./pages/Menu/Menu";
 import ProductRow from "./pages/product/ProductRow"; //product row component
 import BasketItem from "./pages/BasketItem/BasketItem"; //basket component
 import Cart from "./pages/Cart/Cart"; //cart page
+import TotalComp from "./pages/TotalComp/TotalComp";//Total component
 //import ChangePassword from './pages/ChangePassword/ChangePassword';//import Change Password Web Page
 //import HomeBuyer from './pages/Home(Buyer)/HomeBuyer';//home page for buyer
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -17,23 +18,9 @@ const App = () => {
       <div className="App">
         <Switch>
           <Route exact path="/">
-<<<<<<< HEAD
-            <HomePage/>
-          </Route>
-            <Route path="/signup">
-              <SignUp/>
-            </Route>
-              <Route path="/emailverify">
-                <EmailVerification/>
-              </Route>
-                <Route path="/emailenter">
-                  <EnterEmail/>
-                </Route>
-                  <Route path="/home">
-                    <HomeBuyer/>
-                  </Route>
+
                  
-=======
+
             <HomePage />
           </Route>
           <Route path="/signup">
@@ -57,7 +44,9 @@ const App = () => {
           <Route path="/cart">
             <Cart />
           </Route>
->>>>>>> f6c367d6cf3cc52514f5fdb47afa0e540937631b
+          <Route path="/total">
+          <TotalComp />
+        </Route>
         </Switch>
       </div>
     </Router>

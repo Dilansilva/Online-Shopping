@@ -23,7 +23,7 @@ const Cart = () => {
 
       <BasketItem
         price="453.76"
-        details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        details="Lorem ipsum dolor sit, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         ratings={5}
         unitcount={2}
       />
