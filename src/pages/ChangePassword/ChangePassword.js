@@ -12,7 +12,7 @@ const ChangePassword = () => {
                 expand="lg" //Props from Bootstrap 
                 variant="light" 
                 bg="light" 
-                expand="lg"
+                
             >
                 <Navbar.Brand><h2>Unicorn Shopping</h2></Navbar.Brand>
             </Navbar>
