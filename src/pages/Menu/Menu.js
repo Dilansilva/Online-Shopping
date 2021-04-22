@@ -3,13 +3,19 @@ import React from 'react';
 import HeaderComponent from '../HeaderComponent';//navbar
 import Product from '../product/Product';//product
 
-import image from '../../images/shopping-online-on-mobile-application-600w-1697895496.webp';
+import image from '../../images/backgorund2.webp';
 import picOne from '../../images/41vMYgD92xL.jpg'
 
 const sectionStyle = {
-  width: "100%",
+  minWidth: "100%",
+  minHeight: "100%",
+  //position: 'fixed',
   height: "700px",
-  backgroundImage: "url(' + { image } + ')"
+  textAlign: "center",
+  backgroundImage: `url(${image})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center'
+
 };
 
 const Menu = () => {
@@ -20,11 +26,11 @@ const Menu = () => {
         <div>
             <HeaderComponent/>
 
-      <img src={image} className="img-fluid" alt="Responsive image" style={{width: '100%',height:'700px'}}></img>
+      {/* <img src={image} className="img-fluid" alt="Responsive image" style={{width: '100%',height:'700px'}}></img> */}
 
-      {/* <section style={sectionStyle}>
+      <section style={sectionStyle}>
         
-      </section> */}
+      </section>
 
       <br/>
       <br/>
@@ -35,9 +41,9 @@ const Menu = () => {
                 <Product
                   image={picOne}
                   price="199.45"
-                  count={21}
-                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-                  ratings={5}
+                  count={26}
+                  details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+                  ratings={1}
                 />
               </div>
               <div className="col-sm-3">
@@ -74,6 +80,7 @@ const Menu = () => {
           <div style={{textAlign: 'center'}}><h1><u>Kitchen Items </u></h1></div>
           <div className="container-fluid">
             <div class="row">
+
               <div className="col-sm-3">
                 <Product
                   image={picOne}
@@ -82,15 +89,18 @@ const Menu = () => {
                   details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
                   ratings={5}
                 />
+
               </div>
+
               <div className="col-sm-3">
+
                 <Product
                   image={picOne}
                   price="199.45"
                   count={21}
                   details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-                  ratings={5}
                 />
+
               </div>
               <div className="col-sm-3">
                 <Product

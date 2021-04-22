@@ -18,6 +18,8 @@ const Product = (props) => {
         },[props.ratings])
 
     const ratings = () => {//function for ratings
+        console.log(props.ratings);
+       
         if(props.ratings === 1){//when the rarings are 1
             setStar(<div>
                 <GradeIcon/>
@@ -34,7 +36,7 @@ const Product = (props) => {
             setStar(<div>
                 <GradeIcon/><GradeIcon/><GradeIcon/><GradeIcon/>
             </div>);
-        } else{//when the ratings are 5
+        } else {//when the ratings are 5
             setStar(<div>
                 <GradeIcon/><GradeIcon/><GradeIcon/><GradeIcon/><GradeIcon/>
             </div>);
