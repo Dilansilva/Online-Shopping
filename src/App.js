@@ -24,6 +24,9 @@ const App = () => {
                 <Route path="/emailenter">
                   <EnterEmail/>
                 </Route>
+                  <Route path="/home">
+                    <HomeBuyer/>
+                  </Route>
                  
         </Switch>
       </div>

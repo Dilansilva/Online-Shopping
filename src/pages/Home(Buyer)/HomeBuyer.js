@@ -12,10 +12,10 @@ const HomeBuyer = () => {
     return(
         <div>
                 <Navbar expand="lg" variant="light" bg="light">
-                    <Navbar.Brand href="#">Online Shopping</Navbar.Brand>
+                    <Navbar.Brand href="/">Online Shopping</Navbar.Brand>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto">
-                                <Nav.Link href="#home">Log-Out</Nav.Link>
+                                <Nav.Link href="/">Log-Out</Nav.Link>
                                 {/*This area for implement Cart */}
                                 {/*Just for demo */}
                             </Nav>
