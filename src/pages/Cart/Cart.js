@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import HeaderComponent from "../HeaderComponent"; //import navigation bar
 import BasketItem from "../BasketItem/BasketItem"; //import basketitem
+import TotalComp from "../TotalComp/TotalComp"; //import get Total component
 
 const Cart = () => {
   return (
@@ -34,6 +35,7 @@ const Cart = () => {
         ratings={5}
         unitcount={2}
       />
+      <TotalComp />
     </div>
   );
 };
