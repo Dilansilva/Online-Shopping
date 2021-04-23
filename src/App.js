@@ -7,7 +7,8 @@ import Menu from "./pages/Menu/Menu";
 import ProductRow from "./pages/product/ProductRow"; //product row component
 import BasketItem from "./pages/BasketItem/BasketItem"; //basket component
 import Cart from "./pages/Cart/Cart"; //cart page
-import TotalComp from "./pages/TotalComp/TotalComp";//Total component
+import TotalComp from "./pages/TotalComp/TotalComp"; //Total component
+import ProductDetails from "./pages/ProductDetails/ProductDetails"; //product details page
 //import ChangePassword from './pages/ChangePassword/ChangePassword';//import Change Password Web Page
 //import HomeBuyer from './pages/Home(Buyer)/HomeBuyer';//home page for buyer
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -18,9 +19,6 @@ const App = () => {
       <div className="App">
         <Switch>
           <Route exact path="/">
-
-                 
-
             <HomePage />
           </Route>
           <Route path="/signup">
@@ -45,8 +43,11 @@ const App = () => {
             <Cart />
           </Route>
           <Route path="/total">
-          <TotalComp />
-        </Route>
+            <TotalComp />
+          </Route>
+          <Route path="/productDetials">
+            <ProductDetails />
+          </Route>
         </Switch>
       </div>
     </Router>
