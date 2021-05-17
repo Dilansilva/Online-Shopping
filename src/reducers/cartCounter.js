@@ -12,3 +12,5 @@ const cartCounter = (state = 0,action) => {
             return state;
     }
 }
+
+export default cartCounter;
