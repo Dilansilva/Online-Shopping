@@ -102,7 +102,7 @@ const BasketItem = (props) => {
             </Button>
             <br />
             <br />
-            <b>Number of Units:{props.unitcount}</b>
+            <b>Number of Units : {props.unitcount}</b>
           </Col>
           <Col
             xs={6}

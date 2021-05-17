@@ -122,6 +122,7 @@ const Menu = () => {
               </div>
             </div>
           </div>
+          <br/> 
         </div>
     )
 }

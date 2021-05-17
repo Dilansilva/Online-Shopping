@@ -43,6 +43,7 @@ const TotalComp = () => {
           </Col>
         </Row>
       </Container>
+      <br/>
     </div>
   );
 };
